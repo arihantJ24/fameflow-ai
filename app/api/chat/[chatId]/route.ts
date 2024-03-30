@@ -1,5 +1,5 @@
 
-import dotenv from "dotenv";
+
 import { StreamingTextResponse, LangChainStream } from "ai";
 import { auth, currentUser } from "@clerk/nextjs";
 import { Replicate } from "langchain/llms/replicate";
@@ -10,7 +10,7 @@ import { MemoryManager } from "@/lib/memory";
 import { ratelimit } from "@/lib/rate-limit";
 import prismadb from "@/lib/prismadb";
 
- dotenv.config({ path: `.env` });
+
 
 export async function POST(
   request: Request,
@@ -23,7 +23,7 @@ export async function POST(
     if (!user || !user.firstName || !user.id) {
       return new NextResponse("Unauthorized", { status: 401 });
     }
-
+    
     const identifier = request.url + "-" + user.id;
     const { success } = await ratelimit(identifier);
 
@@ -145,6 +145,7 @@ export async function POST(
 
     return new StreamingTextResponse(s);
   } catch (error) {
+    console.log("CHAT_POST", error);
     return new NextResponse("Internal Error", { status: 500 });
   }
 };
