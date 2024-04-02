@@ -11,7 +11,7 @@ export async function POST(req:Request) {
 
         // check wheter we are loggedin or not.. ye apan check krenge by saying ki we are able to load the user or not
         if (!user || !user.id || !user.firstName) {
-            return new NextResponse("Unauthorized", { status: 401 }); 
+            return new NextResponse("Unauthorized, line 14 route.ts companion", { status: 401 }); 
         }
         if (!src || !name || !description || !instructions || !seed || !categoryId) {
           return new NextResponse("Missing required field", { status: 400 });

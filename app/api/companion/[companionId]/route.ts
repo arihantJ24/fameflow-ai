@@ -17,7 +17,7 @@ export async function PATCH(
     }
     // check wheter we are loggedin or not.. ye apan check krenge by saying ki we are able to load the user or not
     if (!user || !user.id || !user.firstName) {
-      return new NextResponse("Unauthorized", { status: 401 });
+      return new NextResponse("Unauthorized , line 20 routes.ts[companionId]", { status: 401 });
     }
     if (
       !src ||
@@ -69,7 +69,7 @@ export async function DELETE(
   try {
     const { userId } = auth();
     if (!userId) {
-      return new NextResponse("Unauthorized", { status: 401 });
+      return new NextResponse("Unauthorized ,line 72 [companion]", { status: 401 });
     }
 
     // yhn hmne ky kiya ki we only enabled the deletion of a character,jo ki currently logged in user ka hai aur jo id passed hai url me wo, isse koi aur user remove nhi kr payega companion ko

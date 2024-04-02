@@ -21,7 +21,7 @@ export async function POST(
     const user = await currentUser();
 
     if (!user || !user.firstName || !user.id) {
-      return new NextResponse("Unauthorized", { status: 401 });
+      return new NextResponse("Unauthorized, line 24 route.ts [chatid]", { status: 401 });
     }
     
     const identifier = request.url + "-" + user.id;
