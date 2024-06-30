@@ -2,6 +2,11 @@
 
 FameFlow.Ai is a custom AI character generator project developed by Arihant Jain. The project aims to provide a conversational AI experience with favorite characters like Elon Musk or famous sports personalities. It utilizes the ChatGPT API key and Next.js framework to create a chat web page that can understand and respond to user input. Additionally, the project incorporates a payment gateway using Stripe. Skills developed during the project include Tailwind, HTML, CSS, JavaScript, and TypeScript. The interface is designed to be fully responsive and user-friendly, with multi-platform authentication and AI-generated content. The project showcases efficient route handling, direct database access, and subscription management by Stripe. Overall, FameFlow.Ai demonstrates Arihant's proficiency in frontend development, AI integration, and creating engaging user experiences.
 
+
+## Home Page
+
+
+
 ## Getting Started
 
 First, run the development server:
